@@ -11,7 +11,9 @@ config :calendlex,
   ecto_repos: [Calendlex.Repo],
   owner: %{
     name: "zmwilliam",
-    time_zone: "America/Sao_Paulo"
+    time_zone: "America/Sao_Paulo",
+    day_start: 08,
+    day_end: 18
   }
 
 # Configures the endpoint
