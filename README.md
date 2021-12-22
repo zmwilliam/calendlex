@@ -1,5 +1,11 @@
 # Calendlex
 
+A Calendly clone 
+
+Following the awesome [post series](https://bigardone.dev/blog/2021/11/06/building-a-simple-calendly-clone-with-phoenix-live-view-pt-1) writen by [@bigardone](https://github.com/bigardone)
+
+## Up and running
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
