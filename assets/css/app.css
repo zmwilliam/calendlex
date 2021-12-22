@@ -1,9 +1,9 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .pink-border {
   @apply border-pink-500;

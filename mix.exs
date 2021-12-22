@@ -46,7 +46,8 @@ defmodule Calendlex.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:timex, "~> 3.7"}
+      {:timex, "~> 3.7"},
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -63,7 +64,7 @@ defmodule Calendlex.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": [
-        "cmd --cd assets npm run deploy",
+        "tailwind default --minify",
         "esbuild default --minify",
         "phx.digest"
       ]
