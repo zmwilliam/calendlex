@@ -14,7 +14,8 @@ config :calendlex,
     time_zone: "America/Sao_Paulo",
     day_start: 08,
     day_end: 18
-  }
+  },
+  basic_auth: [username: "admin", password: "admin"]
 
 # Configures the endpoint
 config :calendlex, CalendlexWeb.Endpoint,

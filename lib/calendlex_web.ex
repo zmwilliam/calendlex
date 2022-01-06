@@ -74,6 +74,18 @@ defmodule CalendlexWeb do
     end
   end
 
+  def admin_live_view do
+    quote do
+      use Phoenix.LiveView, layout: {CalendlexWeb.LayoutView, "admin.html"}
+
+      import CalendlexWeb.LiveViewHelpers
+
+      alias Phoenix.LiveView
+
+      unquote(view_helpers())
+    end
+  end
+
   defp view_helpers do
     quote do
       # Use all HTML functionality (forms, tags, etc)
