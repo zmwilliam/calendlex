@@ -8,6 +8,9 @@ defmodule Calendlex do
   """
   defdelegate available_event_types, to: Calendlex.EventType.Repo, as: :available
   defdelegate get_event_type_by_slug(slug), to: Calendlex.EventType.Repo, as: :get_by_slug
+  defdelegate get_event_type_by_id(id), to: Calendlex.EventType.Repo, as: :get
+  defdelegate insert_event_type(params), to: Calendlex.EventType.Repo, as: :insert
+  defdelegate update_event_type(event_type, params), to: Calendlex.EventType.Repo, as: :update
 
   defdelegate build_time_slots(date, time_zone, duration),
     to: Calendlex.TimeSlots,

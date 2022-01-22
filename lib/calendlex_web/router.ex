@@ -25,6 +25,9 @@ defmodule CalendlexWeb.Router do
       pipe_through [:browser, :auth]
 
       live "/", EventTypesLive
+
+      live "/events_type/new", NewEventTypeLive
+      live "/events_type/:id", EditEventTypeLive
     end
   end
 
