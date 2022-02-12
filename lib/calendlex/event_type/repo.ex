@@ -1,11 +1,12 @@
 defmodule Calendlex.EventType.Repo do
-  import Ecto.Query, only: [order_by: 3]
+  import Ecto.Query, only: [order_by: 3, where: 3]
 
   alias Calendlex.EventType
   alias Calendlex.Repo
 
   def available do
     EventType
+    |> where([e], is_nil(e.deleted_at))
     |> order_by([e], e.name)
     |> Repo.all()
   end
@@ -33,6 +34,19 @@ defmodule Calendlex.EventType.Repo do
   def update(%EventType{} = event_type, attrs) do
     event_type
     |> EventType.changeset(attrs)
+    |> Repo.update()
+  end
+
+  def clone(%EventType{name: name} = event_type) do
+    event_type
+    |> Map.from_struct()
+    |> Map.put(:name, "#{name} (clone)")
+    |> insert()
+  end
+
+  def delete(%EventType{} = event_type) do
+    event_type
+    |> EventType.delete_changeset()
     |> Repo.update()
   end
 end
